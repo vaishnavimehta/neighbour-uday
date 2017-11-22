@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>INCREDIBLE HIMACHAL</title>
+	<link href="bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-12 title">
+			<h1>INCREDIBLE HIMACHAL</h1>
+			<hr class="rule">
+		</div>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4 inp">
+				<input class="form-control" data-bind="value:searchRes,valueUpdate:'afterkeydown', event: {keyup: findPlace}" placeholder="Search" type="text">
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+		<div class="row" id="map"></div>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<ul class="nav navbar-nav" data-bind="foreach:placeList">
+				<li class="items" data-bind="visible:displayed, event:{click:$parent.displayMarker},text:loc"></li>
+			</ul>
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js">
+	</script>
+	<script src="js/knockout.js">
+	</script>
+	<script src="bootstrap/bootstrap.js">
+	</script>
+	<script src="js/app.js">
+	</script>
+	<script async defer onerror="map()" src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyBZXQ_WslbEscBi3sNK6q8bhWt-3VpQR8E&v=3&callback=initMap">
+	</script>
+</body>
+</html>
